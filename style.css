@@ -1,0 +1,45 @@
+@import
+
+:root{
+    --Title:#f8a57f;
+    --SecondaryText:#fad4a6;
+    --Uis:#fbe7ab;
+}
+*{
+    box-sizing: border-box;
+    padding:0 ; 
+    margin: 0;
+}
+
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    object-position: center;
+}
+body{
+    /* test */
+    background-image: url("images/tidal_wave.jpg");
+    display: flex;
+    background-repeat:none;
+    /* test */
+}
+
+/* test */
+.test-box{
+    padding: 10%;
+    border-radius: 10px;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+/* test */
+
+.glass{
+    background: linear-gradient(135deg, rgba(250,212,166, 0.615), rgba(251,231,171, 0.523));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border:1px solid rgba(255, 255, 255, 0.137);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
