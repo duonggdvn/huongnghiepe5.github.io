@@ -1,13 +1,17 @@
-@import
+@font-face {
+    font-family: 'enoway';
+    src: url("Enoway Personal Use.otf") format("opentype");
+}
 
 :root{
     --Title:#f8a57f;
     --SecondaryText:#fad4a6;
     --Uis:#fbe7ab;
+    --Background:#1B191E;
 }
 *{
     box-sizing: border-box;
-    padding:0 ; 
+    padding:0; 
     margin: 0;
 }
 
@@ -17,24 +21,40 @@ img{
     object-fit: fill;
     object-position: center;
 }
+h1, h2, h3{
+    color: var(--Title);
+}
 body{
-    /* test */
+    background-color: var(--Background);
+    overflow: hidden;
+}
+/* banner */
+#banner{
     background-image: url("images/tidal_wave.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    height: 100vh;
     display: flex;
-    background-repeat:none;
-    /* test */
+    align-items: center;
+    justify-content: center;
+    opacity:.6
 }
 
-/* test */
-.test-box{
-    padding: 10%;
-    border-radius: 10px;
+#banner h1{
+    font-family: enoway;
+    font-weight: 700;
+    color: var(--Title);
+    text-align: center;
+}
+/* effects and animations */
+.middle{
     position: absolute;
     top:50%;
     left: 50%;
     transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
 }
-/* test */
 
 .glass{
     background: linear-gradient(135deg, rgba(250,212,166, 0.615), rgba(251,231,171, 0.523));
@@ -42,4 +62,13 @@ body{
     -webkit-backdrop-filter: blur(10px);
     border:1px solid rgba(255, 255, 255, 0.137);
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+
+
+
+@keyframes enter-left {
+    from {transform: translateX(200vw)};
+
+    to {transform: translateX(0);}
 }
