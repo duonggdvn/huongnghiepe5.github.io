@@ -1,13 +1,31 @@
-@import
+@font-face {
+    font-family: 'enoway';
+    src: url("Enoway Personal Use.otf") format("opentype");
+}
 
+@font-face {
+    font-family: 'DFVN';
+    src: url("DFVN West West Condensed.otf") format("opentype");
+}
+
+@font-face{
+    font-family: 'BTSuave';
+    src: url("BTSuave-Medium.otf") format("opentype");
+}
+
+@font-face{
+    font-family: 'Polt';
+    src: url("PoltawskiNowy-VariableFont_wght.ttf");
+}
 :root{
     --Title:#f8a57f;
     --SecondaryText:#fad4a6;
     --Uis:#fbe7ab;
+    --Background:#1B191E;
 }
 *{
     box-sizing: border-box;
-    padding:0 ; 
+    padding:0; 
     margin: 0;
 }
 
@@ -17,29 +35,173 @@ img{
     object-fit: fill;
     object-position: center;
 }
+h1, h2, h3{
+    color: var(--Title);
+    font-family: DFVN;
+}
 body{
-    /* test */
-    background-image: url("images/tidal_wave.jpg");
+    background-color: var(--Background);
+    color:aliceblue;
+    overflow-x: hidden;
+}
+li{
+    display:inline-block;
+}
+.section-title{
+    font-size: 40px;
+    border-bottom: var(--SecondaryText) 2px solid;
+    width: fit-content;
+    text-indent: 10px;
+}
+.section-title::before{
+
+    content:' | ';
+    color:var(--SecondaryText)
+}
+hr{
+    width: 60%;
+    height: 2px;
+    text-align: center;
+    color: #9b6d58;
+}
+/* banner */
+#banner{
+    background:
+    linear-gradient(
+    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0.7)
+    ),
+
+    url(images/banner.gif);
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    height: 100vh;
     display: flex;
-    background-repeat:none;
-    /* test */
+    align-items: center;
+    justify-content: center;
+    animation: blured-in .7s ease-in forwards;
+}
+#banner{
+    animation: blurred-out linear;
+    animation-timeline: view(); 
+    animation-range:exit 600px
 }
 
-/* test */
-.test-box{
-    padding: 10%;
+#banner h1{
+    font-size: 40px;
+    font-family: DFVN;
+    color: var(--Title);
+    text-align: center;
+}
+.banner-text{
+    width: 100vw;
+}
+article{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 80px 20px;
+    overflow: visible;
+}
+/* main title */
+.big-ass-text{
+    font-family: DFVN;
+    color: var(--Title);
+    text-align: center;
+    font-size: 60px;
+    background-image: linear-gradient(to bottom, #F8A57F, #9b6d58);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    line-height: 1;
+}
+.Main-Title{
+    margin-bottom:40px ;
+}
+.Main-Title > p {
+    margin: 20px 10px;
+    color:#fad4a6;
+    text-align: center;
+    font-family: BTSuave;
+}
+/* !cau 1 */
+
+.place-where-text-idk{
+    position:relative;
+}
+.paraghraph{
+    padding: 40px 20px;
+    margin: 20px;
+    border-radius: 20px;
+    font-family: polt;
+
+}
+.SubTitle{
+    margin:40px 0 10px 0;
+    text-align: center;
+}
+.cards-container{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 10px 0
+}
+
+.cards-container > li {
+    padding:10px 20px;
     border-radius: 10px;
+}
+
+/* effects and animations */
+.middle{
     position: absolute;
     top:50%;
     left: 50%;
     transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
 }
-/* test */
 
 .glass{
-    background: linear-gradient(135deg, rgba(250,212,166, 0.615), rgba(251,231,171, 0.523));
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border:1px solid rgba(255, 255, 255, 0.137);
+    background: linear-gradient(135deg, rgba(250,212,166, 0.3), rgba(251,231,171, 0.2));
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+    border:1px solid rgba(255, 255, 255, 0.151);
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.background-element-1{
+    position: absolute;
+    top: 0;
+    left: -10px;
+    width: 200px;
+    filter: blur(5px);
+}
+.background-element-2{
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+    width: 200px;
+    filter: blur(5px);
+}
+
+
+
+@keyframes enter-left {
+    from {transform: translateX(-200vw)};
+
+    to {transform: translateX(0);}
+}
+
+@keyframes blured-in {
+    from {filter: blur(10px);opacity: 0;}
+
+    to {filter: blur(0);opacity: 1;}
+}
+
+@keyframes blurred-out {
+    from {filter: blur(0);opacity: 1;}
+
+    to {filter: blur(10px);opacity: 0;}
 }
